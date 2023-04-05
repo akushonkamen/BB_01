@@ -1,5 +1,5 @@
 {
-  "tools": ["news", "bing-search", "wolfram-alpha","google-search", "python", "requests", "terminal", "meteo-weather","wikipedia"],
+  "tools": ["news", "bing-search", "wolfram-alpha","python", "requests", "terminal", "meteo-weather","wikipedia"],
   "kwargs": {
       "news_api_key": "da3c4a8c4bf0456bb936439a6bdc6fa0",
       "bing_subscription_key": "076778749ee34fa8b1e0ecc2e273884a",
