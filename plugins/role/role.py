@@ -103,7 +103,7 @@ class Role(Plugin):
             return
         logger.debug("[Role] on_handle_context. content: %s" % content)
         if desckey is not None:
-            role = self.get_role(clist[1])
+            
 
             if ((clist[0] == "$角色类型") and clist[1].lower() in ["help", "帮助"]):
                 reply = Reply(ReplyType.INFO, self.get_help_text_type())
@@ -116,6 +116,8 @@ class Role(Plugin):
                 e_context.action = EventAction.BREAK_PASS
                 return
             
+            role = self.get_role(clist[1])
+               
             
             
             
