@@ -120,6 +120,7 @@ class Tool(Plugin):
 
         return {
             "openai_api_key": conf().get("open_ai_api_key", ""),
+            print("openai_api_key")
             "proxy": conf().get("proxy", ""),
             # note: 目前tool暂未对其他模型测试，但这里仍对配置来源做了优先级区分，一般插件配置可覆盖全局配置
             "model_name": tool_model_name if tool_model_name else conf().get("model", "gpt-3.5-turbo"),
@@ -127,6 +128,7 @@ class Tool(Plugin):
             "top_k_results": kwargs.get("top_k_results", 2),
             # for news tool
             "news_api_key": kwargs.get("news_api_key", ""),
+            print("news_api_key")
             # for bing-search tool
             "bing_subscription_key": kwargs.get("bing_subscription_key", ""),
             # for google-search tool
