@@ -117,7 +117,7 @@ class Tool(Plugin):
 
     def _build_tool_kwargs(self, kwargs: dict):
         tool_model_name = kwargs.get("model_name")
-        print("news_api_key": kwargs.get("news_api_key", ""))
+        print(kwargs.get("news_api_key", ""))
         return {
             "openai_api_key": conf().get("open_ai_api_key", ""),
            
