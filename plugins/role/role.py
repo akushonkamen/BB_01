@@ -105,7 +105,7 @@ class Role(Plugin):
         if desckey is not None:
             
 
-            if ((clist[0] == "$角色类型") and clist[1].lower() in ["help", "帮助"]):
+            if (len(clist)==1 and clist[0] == "$角色类型") or ((clist[0] == "$角色类型") and clist[1].lower() in ["help", "帮助"]):
                 reply = Reply(ReplyType.INFO, self.get_help_text_type())
                 e_context['reply'] = reply
                 e_context.action = EventAction.BREAK_PASS
