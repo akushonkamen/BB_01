@@ -110,7 +110,7 @@ class Role(Plugin):
                 e_context['reply'] = reply
                 e_context.action = EventAction.BREAK_PASS
                 return
-            elif (len(clist)==1 and clist[0] == "$角色") or ((clist[0] == "$角色") and clist[1].lower() in ["help", "帮助"]):
+            elif (len(clist)==1 and clist[0] == "$角色") or (len(clist)==1 and clist[0] == "$role") or ((clist[0] == "$角色") and clist[1].lower() in ["help", "帮助"]) or ((clist[0] == "$role") and clist[1].lower() in ["help", "帮助"]):
                 reply = Reply(ReplyType.INFO, self.get_help_text())
                 e_context['reply'] = reply
                 e_context.action = EventAction.BREAK_PASS
