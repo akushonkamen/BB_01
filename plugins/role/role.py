@@ -49,7 +49,7 @@ class Role(Plugin):
         except Exception as e:
             logger.warn("[Role] init failed, exception: %s, ignore or see https://github.com/zhayujie/chatgpt-on-wechat/tree/master/plugins/role ." % e)
 
-    def get_role(self, name, find_closest=True):
+    def get_role(self, name, find_closest=True, min_sim = 0.35):
         name = name.lower()
         found_role = None
         if name in self.roles:
@@ -59,7 +59,7 @@ class Role(Plugin):
 
             def str_simularity(a, b):
                 return difflib.SequenceMatcher(None, a, b).ratio()
-            max_sim = 0.0
+            max_sim = min_sim
             max_role = None
             for role in self.roles:
                 sim = str_simularity(name, role)
